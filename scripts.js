@@ -37,6 +37,8 @@ b. Use a loop to iterate through the array again and concatenate all the names t
 let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
 console.log(names.length);
 
+//need to determine total of letters, then divide by number of names
+
 let totalLetters = 0;
 
 for (let i = 0; i < names.length; i++) {
@@ -70,3 +72,35 @@ for (let i = 0; i < names.length; i++) {
     nameLengths.push(names[i].length);
 }
 console.log(nameLengths);
+
+/*
+6. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array.
+*/
+
+let nameTotals = 0;
+
+for (let i = 0; i < names.length; i++) {
+    nameTotals += names[i].length;
+}
+console.log(nameTotals);
+
+/*
+7. Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in 'Hello' and 3, I would expect the function to return 'HelloHelloHello').
+*/
+
+function repeatedWord(word, n) {
+    return word.repeat(n);
+}
+
+let string = repeatedWord("Beetlejuice", 3);
+console.log(string);
+
+/*
+8. Write a function that takes two parameters, firstName and lastName, and returns a full name. The full name should be the first and the last name separated by a space.
+*/
+
+function fullName (firstName, lastName) {
+    return firstName + " " + lastName;
+}
+
+console.log(fullName("Misty", "Klein"));
