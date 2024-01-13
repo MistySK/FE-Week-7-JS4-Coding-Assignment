@@ -177,3 +177,14 @@ function willBuyDrink (isHotOutside, moneyInPocket) {
 }
 console.log(willBuyDrink(hotOutside, moneyAvailable));
 
+// 13. Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
+
+// WHile this function is like #12, it applies to a real-life question and will help me decide if I should buy a pair of shoes I have been looking at. ha ha (It's important to make this fun, right?)
+
+let willIWearThem = true;
+let price = 45;
+
+function doIBuyTheShoes (willIWearThem, areTheyAffordable) {
+   return willIWearThem && areTheyAffordable < 50;
+}
+console.log(doIBuyTheShoes(willIWearThem, price));
