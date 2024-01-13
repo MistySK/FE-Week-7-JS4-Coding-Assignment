@@ -104,3 +104,76 @@ function fullName (firstName, lastName) {
 }
 
 console.log(fullName("Misty", "Klein"));
+
+/*
+Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
+*/
+
+let numbersArray = [20, 30, 40, 50];
+
+// finding the sum of the array first
+
+let sum = 0;
+
+for (let i = 0; i < numbersArray.length; i++) {
+    sum += numbersArray[i];
+}
+console.log(sum);
+
+// then setting up the function. .reduce is new for me, but was included in so many searches I found.
+function isGreaterThan100 (numbers) {
+ return numbers.reduce((sum, current) => sum + current, 0) > 100;
+}
+
+let result = isGreaterThan100(numbersArray);
+console.log(result);
+
+/*
+10. Write a function that takes an array of numbers and returns the average of all the elements in the array.
+*/
+
+function calculateAverage(numbers) {
+
+    // The reduce() method returns a single value: the function's accumulated result.
+    // Accumulator: This contains the value calculated from the previous iteration. On the first iteration, if an initialValue will be provided, the accumulator will be set to the value of initialValue . CurrentValue: The current value of the element is processed in the array.
+    
+    const sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+      const average = sum / numbers.length;
+    
+      return average;
+    }
+    
+    const averageResult = calculateAverage(numbersArray);
+    console.log(averageResult);
+
+// 11. Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+
+let array1 = [10, 20, 30, 40]
+let array2 = [12, 22, 32, 42]
+
+//function
+function isAverageGreaterThan(array1, array2) {
+   let calculateAverage = (arr) => {
+   let sum = arr.reduce((accumulator, current) => accumulator + current, 0);
+   return sum / arr.length;
+   }
+
+//calculate average of each array 
+let average1 = calculateAverage(array1);
+let average2 = calculateAverage(array2);
+
+return average1 > average2;
+}
+let answer = isAverageGreaterThan(array1, array2);
+console.log(answer);
+
+// 12. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+
+let hotOutside = true;
+let moneyAvailable = 12;
+
+function willBuyDrink (isHotOutside, moneyInPocket) {
+   return isHotOutside && moneyInPocket > 10.50;
+}
+console.log(willBuyDrink(hotOutside, moneyAvailable));
+
